@@ -33,7 +33,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe feature cards, steps, and SDK cards
-document.querySelectorAll('.feature-card, .step, .sdk-card, .cta-inner').forEach(el => {
+document.querySelectorAll('.deploy-methods, .feature-card, .step, .sdk-card, .cta-inner').forEach(el => {
   el.classList.add('animate-on-scroll');
   observer.observe(el);
 });
