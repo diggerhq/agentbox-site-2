@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentBox — Deploy Agents with One Command</title>
+  <meta name="description" content="AgentBox is the hosting platform for agentic workloads. Like Vercel for frontends, but for agents. Deploy, run, and monitor AI agents in isolated sandboxes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="28" rx="6" fill="url(#logo-grad)"/>
+          <path d="M8 18V10L14 7L20 10V18L14 21L8 18Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M14 14L20 10M14 14L8 10M14 14V21" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="logo-grad" x1="0" y1="0" x2="28" y2="28">
+              <stop stop-color="#6366f1"/>
+              <stop offset="1" stop-color="#8b5cf6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>AgentBox</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#sdk">SDK</a>
+        <a href="https://agentbox.mintlify.app/introduction" target="_blank">Docs</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.agentbox.sh" class="btn btn-ghost" target="_blank">Sign In</a>
+        <a href="https://app.agentbox.sh" class="btn btn-primary btn-sm" target="_blank">Get Started</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#sdk">SDK</a>
+      <a href="https://agentbox.mintlify.app/introduction" target="_blank">Docs</a>
+      <a href="https://app.agentbox.sh" class="btn btn-primary" target="_blank">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+    </div>
+    <div class="container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        The hosting platform for agentic workloads
+      </div>
+      <h1 class="hero-title">
+        Deploy agents with<br>
+        <span class="gradient-text">one command</span>
+      </h1>
+      <p class="hero-subtitle">
+        Like Vercel for frontends or Fly for backends, but for agents.<br>
+        Isolated sandboxes, native Claude SDK support, and real-time monitoring.
+      </p>
+      <div class="hero-actions">
+        <a href="https://app.agentbox.sh" class="btn btn-primary btn-lg" target="_blank">
+          Start Deploying
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://agentbox.mintlify.app/introduction" class="btn btn-outline btn-lg" target="_blank">
+          Read the Docs
+        </a>
+      </div>
+      <div class="hero-terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="terminal-title">terminal</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-cmd">npm install -g @agentboxsh/cli</span>
+          </div>
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-cmd">agentbox login</span>
+          </div>
+          <div class="terminal-line terminal-output">Authenticated successfully.</div>
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-cmd">agentbox init</span>
+          </div>
+          <div class="terminal-line terminal-output">Created agentbox.toml</div>
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-cmd">agentbox deploy</span>
+          </div>
+          <div class="terminal-line terminal-output terminal-success">Deployed v1 &rarr; dep_a1b2c3d4</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Everything you need to<br><span class="gradient-text">run agents in production</span></h2>
+        <p class="section-subtitle">From development to monitoring, AgentBox provides the complete infrastructure for your agentic workloads.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3>One-Command Deploy</h3>
+          <p>Deploy your agent with a single <code>agentbox deploy</code> command. Automatic builds, packaging, and versioning out of the box.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="18" rx="2"/>
+              <path d="M2 9h20M9 3v18"/>
+            </svg>
+          </div>
+          <h3>Isolated Sandboxes</h3>
+          <p>Each session runs in its own isolated sandbox environment. Secure, reproducible, and completely independent from other executions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>Claude SDK Native</h3>
+          <p>First-class integration with the Claude Agent SDK. Build sophisticated agents with tool use, memory, and multi-step reasoning.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <h3>SDK &amp; CLI</h3>
+          <p>Full-featured TypeScript SDK for programmatic control. Powerful CLI for local development, deployment, and log streaming.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>Real-Time Monitoring</h3>
+          <p>Stream logs from running sessions in real-time. Track session status, errors, and outputs via the CLI, SDK, or web dashboard.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </div>
+          <h3>GitHub Integration</h3>
+          <p>Connect your repo for automatic deployments on every push. Seamless CI/CD pipeline for your agent code.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title">From code to production<br><span class="gradient-text">in three steps</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Develop</h3>
+            <p>Write your agent code using the Claude Agent SDK. Access session inputs through environment variables. Bundle with esbuild for the sandbox environment.</p>
+            <div class="code-block">
+              <div class="code-header">
+                <span class="code-dot"></span>
+                <span>main.ts</span>
+              </div>
+              <pre><code><span class="kw">import</span> Anthropic <span class="kw">from</span> <span class="str">"@anthropic-ai/sdk"</span>;
+
+<span class="kw">const</span> client = <span class="kw">new</span> <span class="fn">Anthropic</span>();
+<span class="kw">const</span> input = process.env.<span class="var">AGENTBOX_SESSION_INPUT</span>;
+<span class="kw">const</span> sessionId = process.env.<span class="var">AGENTBOX_SESSION_ID</span>;
+
+<span class="kw">const</span> message = <span class="kw">await</span> client.messages.<span class="fn">create</span>({
+  model: <span class="str">"claude-sonnet-4-5-20250929"</span>,
+  max_tokens: <span class="num">1024</span>,
+  messages: [{ role: <span class="str">"user"</span>, content: input }],
+});
+
+console.<span class="fn">log</span>(message.content);</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Deploy</h3>
+            <p>Deploy with a single CLI command or connect your GitHub repository for automatic deployments on every push. Each deployment is versioned and tracked.</p>
+            <div class="code-block">
+              <div class="code-header">
+                <span class="code-dot"></span>
+                <span>terminal</span>
+              </div>
+              <pre><code><span class="prompt">$</span> agentbox deploy
+<span class="dim">Building project...</span>
+<span class="dim">Packaging artifact...</span>
+<span class="dim">Uploading...</span>
+<span class="success">Deployed v3 &rarr; dep_x7k2m9p1</span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Execute &amp; Monitor</h3>
+            <p>Trigger agent sessions programmatically via the SDK. Pass inputs, secrets, and parameters. Monitor execution with real-time log streaming.</p>
+            <div class="code-block">
+              <div class="code-header">
+                <span class="code-dot"></span>
+                <span>run.ts</span>
+              </div>
+              <pre><code><span class="kw">import</span> { Agentbox } <span class="kw">from</span> <span class="str">"@agentboxsh/sdk"</span>;
+
+<span class="kw">const</span> agentbox = <span class="kw">new</span> <span class="fn">Agentbox</span>({ apiKey: process.env.<span class="var">AGENTBOX_KEY</span> });
+
+<span class="kw">const</span> session = <span class="kw">await</span> agentbox.sessions.<span class="fn">create</span>(
+  <span class="str">"proj_a1b2c3"</span>,
+  { input: { url: <span class="str">"https://example.com"</span>, task: <span class="str">"analyze"</span> } }
+);
+
+<span class="cmt">// Stream logs in real-time</span>
+<span class="kw">const</span> logs = <span class="kw">await</span> agentbox.sessions.<span class="fn">logs</span>(session.id);
+<span class="kw">for await</span> (<span class="kw">const</span> log <span class="kw">of</span> logs) {
+  console.<span class="fn">log</span>(log.message);
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SDK Section -->
+  <section class="sdk-section" id="sdk">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">SDK Reference</span>
+        <h2 class="section-title">Programmatic control<br><span class="gradient-text">over every detail</span></h2>
+        <p class="section-subtitle">Manage projects, deployments, sessions, and API keys programmatically with the TypeScript SDK.</p>
+      </div>
+      <div class="sdk-grid">
+        <div class="sdk-card">
+          <h4>Projects</h4>
+          <p>Create, list, retrieve, and delete agent projects. Each project is a container for deployments and sessions.</p>
+          <code>agentbox.projects.create({ name })</code>
+        </div>
+        <div class="sdk-card">
+          <h4>Deployments</h4>
+          <p>Upload artifacts with configuration specifying entrypoint and runtime. Node 22 and Python 3.12 supported.</p>
+          <code>agentbox.deployments.create(projectId, artifact)</code>
+        </div>
+        <div class="sdk-card">
+          <h4>Sessions</h4>
+          <p>Create sessions with input data and secrets. Stream logs, filter by status, and terminate running sessions.</p>
+          <code>agentbox.sessions.create(projectId, { input })</code>
+        </div>
+        <div class="sdk-card">
+          <h4>API Keys</h4>
+          <p>Generate, list, and revoke API keys for authentication. Keys are scoped to your account.</p>
+          <code>agentbox.apiKeys.create({ name })</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-glow"></div>
+        <h2>Ready to deploy your first agent?</h2>
+        <p>Get started in minutes. Install the CLI, write your agent, and deploy with one command.</p>
+        <div class="cta-actions">
+          <a href="https://app.agentbox.sh" class="btn btn-white btn-lg" target="_blank">
+            Get Started Free
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://agentbox.mintlify.app/introduction" class="btn btn-ghost-light btn-lg" target="_blank">View Documentation</a>
+        </div>
+        <div class="cta-install">
+          <code>npm install -g @agentboxsh/cli</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="28" height="28" rx="6" fill="url(#logo-grad2)"/>
+              <path d="M8 18V10L14 7L20 10V18L14 21L8 18Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M14 14L20 10M14 14L8 10M14 14V21" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="logo-grad2" x1="0" y1="0" x2="28" y2="28">
+                  <stop stop-color="#6366f1"/>
+                  <stop offset="1" stop-color="#8b5cf6"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>AgentBox</span>
+          </a>
+          <p>The hosting platform for agentic workloads.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Product</h5>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#sdk">SDK</a>
+          </div>
+          <div class="footer-col">
+            <h5>Resources</h5>
+            <a href="https://agentbox.mintlify.app/introduction" target="_blank">Documentation</a>
+            <a href="https://agentbox.mintlify.app/quickstart" target="_blank">Quickstart</a>
+            <a href="https://agentbox.mintlify.app/cli" target="_blank">CLI Reference</a>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <a href="https://app.agentbox.sh" target="_blank">Dashboard</a>
+            <a href="https://github.com/diggerhq" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AgentBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
