@@ -144,6 +144,38 @@
     </div>
   </section>
 
+  <!-- Secrets -->
+  <section class="secrets-section" id="secrets">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Security</span>
+        <h2 class="section-title">Secrets <span class="gradient-text">never leak</span></h2>
+        <p class="section-subtitle">Built-in secret vault; the LLM only sees sealed tokens, real values are injected by the proxy in-flight.</p>
+      </div>
+      <div class="secrets-terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="terminal-title">terminal</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-cmd">agentbox secret set ANTHROPIC_API_KEY sk-ant-&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</span>
+          </div>
+          <div class="terminal-line terminal-output terminal-success">&check; Stored as sealed token</div>
+          <div class="terminal-line">&nbsp;</div>
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-cmd">agentbox secret list</span>
+          </div>
+          <div class="terminal-line terminal-output">ANTHROPIC_API_KEY&ensp;&ensp;SEALED_a1b2c3&ensp;&ensp;just now</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Features -->
   <section class="features" id="features">
     <div class="container">

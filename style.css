@@ -556,6 +556,41 @@ code {
   }
 }
 
+/* ===== Secrets ===== */
+.secrets-section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.secrets-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.secrets-section .section-subtitle code {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+  color: var(--primary-light);
+}
+
+.secrets-terminal {
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 /* ===== Features ===== */
 .features {
   padding: 120px 0;
