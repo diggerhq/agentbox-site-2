@@ -591,6 +591,148 @@ code {
   overflow: hidden;
 }
 
+/* ===== MCP & Skills ===== */
+.tools-section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.tools-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.tools-panel {
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tools-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tools-panel-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.tools-panel-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.tools-panel-dots span:nth-child(1) { background: #ef4444; }
+.tools-panel-dots span:nth-child(2) { background: #eab308; }
+.tools-panel-dots span:nth-child(3) { background: #22c55e; }
+
+.tools-panel-title {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.tools-panel-body {
+  padding: 20px;
+}
+
+.tools-panel-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tools-panel-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.tools-panel-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.tools-panel-add {
+  font-size: 12px;
+  color: var(--primary-light);
+  cursor: default;
+}
+
+.tools-panel-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.tools-panel-icon {
+  color: var(--text-dim);
+  display: flex;
+  flex-shrink: 0;
+}
+
+.tools-panel-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.tools-panel-detail {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.tools-panel-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tools-panel-status-on {
+  background: var(--success);
+}
+
+.tools-panel-status-off {
+  background: var(--text-dim);
+}
+
+.tools-panel-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+@media (max-width: 768px) {
+  .tools-panel-detail {
+    display: none;
+  }
+}
+
 /* ===== Features ===== */
 .features {
   padding: 120px 0;
