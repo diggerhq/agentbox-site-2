@@ -1,6 +1,6 @@
-# AgentBox Landing Page — Agent Working Doc
+# Oshu Box Landing Page — Agent Working Doc
 
-Marketing site for AgentBox, the hosting platform for agentic workloads.
+Marketing site for Oshu Box, the hosting platform for agentic workloads.
 
 **Live site:** https://diggerhq.github.io/agentbox-site-2 (GitHub Pages)
 **Product app:** https://app.agentbox.sh
@@ -141,9 +141,9 @@ Lines 832–906  Responsive media queries
 
 ## Product Context
 
-AgentBox is positioned as **"Vercel for AI agents."** This site is the marketing landing page for a real product — the source of truth for the product lives in `../agentbox-poc/`.
+Oshu Box is positioned as **"Vercel for AI agents."** This site is the marketing landing page for a real product — the source of truth for the product lives in `../agentbox-poc/`.
 
-### What AgentBox Actually Is
+### What Oshu Box Actually Is
 
 A hosting platform where developers deploy AI agents that run in isolated cloud sandboxes. The core loop:
 
@@ -220,7 +220,7 @@ agentbox logs <session-id>  # Stream SSE logs
 
 ### GitHub Auto-Deploy Flow
 
-1. User installs AgentBox GitHub App on repo
+1. User installs Oshu Box GitHub App on repo
 2. Push to connected branch → webhook → build queued in PostgreSQL
 3. Build runner creates E2B sandbox → clones repo → runs build command → creates artifact → uploads to R2
 4. Deployment record created with commit SHA, message, author, branch
@@ -230,7 +230,7 @@ agentbox logs <session-id>  # Stream SSE logs
 
 The "How It Works" section shows three steps with real code. If updating these:
 
-- **Develop step** should show agent code using `@anthropic-ai/sdk` (the Anthropic SDK, not the AgentBox SDK) reading from `process.env.AGENTBOX_SESSION_INPUT`
+- **Develop step** should show agent code using `@anthropic-ai/sdk` (the Anthropic SDK, not the Oshu Box SDK) reading from `process.env.AGENTBOX_SESSION_INPUT`
 - **Deploy step** should show the CLI terminal output
 - **Execute step** should show `@agentboxsh/sdk` creating a session and streaming logs
 
